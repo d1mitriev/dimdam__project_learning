@@ -39,7 +39,7 @@
       font-family: 'Montserrat', sans-serif;
     }
     .container {
-        position: fixed;
+        position: absolute;
         margin-top: 60px;
         height: auto;
         display: flex;

@@ -1,12 +1,18 @@
 <template>
     <headerPage></headerPage>
+    <listhouse></listhouse>
+    <taxiorder></taxiorder>
 </template>
 
 <script>
   import headerPage from './components/headerPage.vue';
+  import listhouse from './components/listhouse.vue';
+  import taxiorder from './components/ordertaxi.vue';
   export default {
     components: {
-      headerPage
+      headerPage,
+      listhouse,
+      taxiorder
     }
   }
 </script>
