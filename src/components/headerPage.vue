@@ -1,6 +1,6 @@
 <template>
         <header>
-	        <div id="header__banner" class="header__banner">
+	        <div :id="bannerId" class="header__banner" :style="{ background: 'url(' + getCurrentBanner + ') center center no-repeat', backgroundSize: 'cover' }">
 	        	<div class="header__banner__info">
 	        		<div class="info__title"><p>Ми завжди раді гостям</p></div>
 	        		<div class="info__search">
@@ -100,6 +100,12 @@
 		DatePicker,
 		Modal
 	},
+	props: {
+    bannerId: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       selectedCity: "",
@@ -121,7 +127,10 @@
       isModalVisible: false,
 	  range: null,
 	  childInput1: null,
-	  childInput2: null
+	  childInput2: null,
+	  bannerId: 'header__banner',
+	  bannerImages: ["/public/banner1.png", "/public/banner2.png", "/public/banner3.png"],
+      currentIndex: 0
     };
   },
   computed: {
@@ -138,6 +147,9 @@
      	modalValues() {
 			return [this.input1, this.input2, this.input3, this.childInput1, this.childInput2];
   		},
+		  getCurrentBanner() {
+      return this.bannerImages[this.currentIndex];
+    }
     },
     methods: {
 	 	updateInput(name, value) {
@@ -191,8 +203,17 @@
 		updateChildInput(name, value) {
       		this.modalData[name] = value;
     	},
+		startBannerRotation() {
+   		setInterval(this.changeBanner, 10000);
+   		},
+   		changeBanner() {
+   		  this.currentIndex = (this.currentIndex + 1) % this.bannerImages.length;
+   		}
 
-	}
+	},
+	mounted() {
+		this.startBannerRotation();
+  },
 };
 </script>
 
