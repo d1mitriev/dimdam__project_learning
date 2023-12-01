@@ -2,17 +2,26 @@
     <headerPage></headerPage>
     <listhouse></listhouse>
     <taxiorder></taxiorder>
+    <infopanel></infopanel>
+    <contacts></contacts>
+    <review></review>
 </template>
 
 <script>
   import headerPage from './components/headerPage.vue';
   import listhouse from './components/listhouse.vue';
   import taxiorder from './components/ordertaxi.vue';
+  import infopanel from './components/infopanel.vue';
+  import contacts from './components/contacts.vue';
+  import review from './components/review.vue';
   export default {
     components: {
       headerPage,
       listhouse,
-      taxiorder
+      taxiorder,
+      infopanel,
+      contacts,
+      review
     }
   }
 </script>
