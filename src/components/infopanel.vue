@@ -230,4 +230,151 @@
 	font-style: normal;
 	font-weight: 400;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 414px) {
+    .container {
+        margin-top: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main__nfhws {
+	border-radius: 25px;
+	width: 100%;
+	background-color: #ffffff;
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+}
+
+    .nfwhs__title {
+	font-size: 48px;
+	font-weight: 600;
+}
+
+.nfhws_info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.nfhws__part1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.nfwhs__patr1__title {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+}
+.nfwhs__patr1__image {
+
+}
+.nfwhs__patr1__button {
+	margin-top: 33px;
+	display: flex;
+	align-items: center;
+}
+.nfwhs__patr1__button a{
+	padding: 12px 140px;
+	border-radius: 25px;
+	border: 2px solid #000;
+
+}
+
+.nfwhs__patr1__button a:hover{
+	background: #000;
+	color: var(--white);
+}
+
+.nfhws__part2 {
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+.nfwhs__patrt2__title {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+}
+.nfwhs__patrt2__image {
+}
+.nfwhs__patrt2__button {
+	margin-top: 33px;
+	display: flex;
+	align-items: center;
+}
+
+.nfwhs__patrt2__button a{
+	padding: 12px 140px;
+	border-radius: 25px;
+	border: 2px solid #000;
+}
+
+.nfwhs__patrt2__button a:hover{
+	background: #000;
+	color: var(--white);
+}
+
+.nfhws__part3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.nfwhs__patrt3__title {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+}
+.nfwhs__patrt3__image {
+}
+.nfwhs__patrt3__button {
+	margin-top: 33px;
+	display: flex;
+	align-items: center;
+}
+
+.nfwhs__patrt3__button a{
+	padding: 12px 140px;
+	border-radius: 25px;
+	border: 2px solid #000;
+}
+
+.nfwhs__patrt3__button a:hover{
+	background: #000;
+	color: var(--white);
+}
+
+.nfhws__author {
+	background-image: url(../assets/nfhws__author--img.png);
+	width: 295px;
+	height: 300px;
+	
+}
+.nfwhs__patrt4__title {
+	
+	margin-right: 23px;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+}
+.nfwhs__patrt4__description {
+	margin-top: 17px;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+}
+}
 </style>

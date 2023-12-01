@@ -251,4 +251,132 @@
 	border: solid 2px var(--black);
 	border-radius: 0px 14px 14px 0px;
 }
+
+
+
+
+
+
+
+@media screen and (max-width: 414px) {
+
+	.container {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .main__contact {
+	border-radius: 25px;
+	width: 100%;
+	height: auto;
+	flex-direction: column;
+	background-color: #ffffff;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 40px;
+}
+.contact__description {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.contact__description__text {
+	font-size: 30px;
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	vertical-align: middle;
+
+}
+.contact__description__text__1 {
+	width: 100%;
+}
+.contact__description__text--slide1 {
+	border-bottom: 0;
+	width: 100%;
+}
+.contact__description__text__2 {
+	width: 100%;
+}
+.contact__description__text__3 {
+	width: 100%;
+}
+
+.contact__button {
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
+	flex-direction: column;
+}
+
+.contact__button a {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	padding: 12px 120px;
+	border-radius: 25px;
+	background-color: var(--orange);
+}
+
+.contact__button a:hover{
+	background-color: var(--black);
+	color: var(--white);
+}
+
+.contact__image {
+	display: none;
+	visibility: hidden;
+}
+
+.contact__phone--numbers {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 15px;
+}
+.contact__phone--numbers__lifecell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact__phone--numbers__lifecell a {
+	padding: 16.5px 19px;
+	font-size: 32px;
+	border: solid 2px var(--black);
+	border-radius: 0px 14px 14px 0px;
+}
+
+.contact__phone--numbers__lifecell__img {
+	width: 76px;
+	height: 76px;
+
+}
+.contact__phone--numbers__kievstar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+.contact__phone--numbers__kievstar__img {
+	width: 76px;
+	height: 76px;
+
+}
+.contact__phone--numbers__kievstar__numberphone {
+
+}
+
+.contact__phone--numbers__kievstar__numberphone a {
+	padding: 16.5px 19px;
+	font-size: 32px;
+	border: solid 2px var(--black);
+	border-radius: 0px 14px 14px 0px;
+}
+
+}
 </style>
