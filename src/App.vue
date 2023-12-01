@@ -1,14 +1,16 @@
-<template>
-  <div>
-    <router-view></router-view>
+<template> 
+  <navbarPage></navbarPage>
+  <router-view></router-view>
 </template>
 
 <script>
+  import navbarPage from './components/navbarPage.vue';
   export default {
-    
+    components: {
+      navbarPage,
+    }
   }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
 </style>

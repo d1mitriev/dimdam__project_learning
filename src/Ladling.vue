@@ -1,22 +1,22 @@
 <template>
-  <div>
-    hi
-  </div>
+    <headerPage></headerPage>
 </template>
 
 <script>
-  import contacts from './components/contacts.vue';
-  import footer from './components/footer.vue';
-  import header from './components/header.vue';
-  import infopanel from './components/infopanel.vue';
-  import listhouse from './components/listhouse.vue';
-  import navbar from './components/navbar.vue';
-  import review from './components/review.vue';
+  import headerPage from './components/headerPage.vue';
   export default {
-    
+    components: {
+      headerPage
+    }
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+  /* Импорт шрифтов */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* ЭТО БАЗА! */
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 </style>
