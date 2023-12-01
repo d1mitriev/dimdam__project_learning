@@ -1,6 +1,9 @@
-# Vue 3 + Vite
+# Учебный проект. Для предмета Web NURE 👨‍🎓
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Проект был написан на Vue 3
+Для того чтоб запустить проект нужно прописать: npm dimdam.
+
+Дизайн был создан при помощи Figma: https://www.figma.com/file/8VJkR9keqkt9jtR9dl4I6X/domdam?type=design&node-id=0%3A1&mode=design&t=h0vClYmpzpjscSHM-1
 
 ## Recommended IDE Setup
 
