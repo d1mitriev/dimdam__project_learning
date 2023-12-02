@@ -112,29 +112,27 @@
 }
 
 .taxi__button {
-	font-size: 32px;
+	font-size: 20px;
 	font-style: normal;
 	font-weight: 600;
 	margin-top: 80px;
+	width: 100%;
 }
 
 .taxi__button a {
-	padding: 19px 42px;
-	background-color: var(--orange);
+	padding: 15px 220px;
+	width: 100%;
 	border-radius: 15px;
 	margin-top: 36px;
+	transition: all 0.3s;
+	border: 2px solid #ffffff;
+	background-color: #FFBC57;
 }
 
-.main__nfhws {
-	margin-top: 60px;
-	border-radius: 25px;
-	width: 1440px;
-	height: 427px;
+.taxi__button a:hover {
+	
 	background-color: #ffffff;
-	padding: 25px;
-	margin-left: 206px;
-	display: flex;
-	flex-direction: column;
+	border: 2px solid #000000;
 }
 
 

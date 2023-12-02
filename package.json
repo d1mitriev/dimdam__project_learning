@@ -14,7 +14,9 @@
     "firebase": "^10.7.0",
     "v-calendar": "^3.1.2",
     "vue": "^3.3.8",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vue-scrollto": "^2.20.0",
+    "vue3-smooth-scroll": "^0.8.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",

@@ -1,6 +1,6 @@
 
 <template>
-    <div class="container">
+    <div class="container" id="review">
         <div class="main__reviews">
 			<div class="reviws--part1">
 				<div class="reviews--part1__img"></div>

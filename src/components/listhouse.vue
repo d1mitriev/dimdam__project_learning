@@ -1,6 +1,6 @@
 
 <template>
-    <div class="container">
+    <div class="container" id="listhouse">
         <div class="main__ads">
                     <div class="main__ads__title">
                         <div class="main_ads__title__text">Оголошення</div>
@@ -161,18 +161,18 @@
 }
 .main_ads__title__more {
 	margin-left: 13px;
-	padding-left: 6px;
-	padding-right: 6px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 	border-radius: 15px;
-	color: var(--dark);
-	border: 1px solid var(--dark);
+	color: #000000;
+	border: 1px solid #000000;
 }
 
 .main_ads__title__more:hover {
 	transition: 0.3s;
-	background-color: var(--dark);
+	background-color: #000000;
 	color: var(--white);
 }
 
