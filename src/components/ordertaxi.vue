@@ -130,7 +130,6 @@
 }
 
 .taxi__button a:hover {
-	
 	background-color: #ffffff;
 	border: 2px solid #000000;
 }

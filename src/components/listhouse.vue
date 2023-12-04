@@ -137,6 +137,7 @@
 
 <style scoped>
 
+
     .container {
         display: flex;
         flex-direction: column;
@@ -187,11 +188,18 @@
 	flex-direction: column;
 	padding: 10px;
 	border-radius: 25px;
+	overflow: hidden;
 }
 
 .main__ads__post--1:hover {
 	transition: 0.3s;
 	box-shadow: 0px 0px 5px 0px var(--dark);
+}
+
+.main__ads__post--1:hover .post--1__image{
+	transform: scale(1.05);
+	width: 435px;
+	height: 304px;
 }
 
 .main__ads__post--1__grid-conteiner {
@@ -207,6 +215,8 @@
 	width: 435px;
 	height: 304px;
 	background-repeat: no-repeat;
+	border-radius: 25px 25px 0px 0px;
+	transition: all 0.3s;
 }
 .post--1__price {
 	font-weight: 600;

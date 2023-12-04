@@ -40,7 +40,8 @@
   </template>
   
   <script>
-
+  import {toast} from 'vue3-toastify';
+  import 'vue3-toastify/dist/index.css';
   import { initializeApp } from 'firebase/app';
   import { getFirestore, collection, addDoc } from 'firebase/firestore/lite';
   import 'firebase/database';
@@ -61,7 +62,9 @@
         this.$emit('close');
       },
       submitModal() {
-  this.$emit('submit');
+      this.$emit('submit');
+        
+      toast.success('Заказ успешно подтвержден', {position: toast.POSITION.TOP_CENTER, autoClose: 4000, className: 'custom-toast',});
 
   try {
     const ordersCollection = collection(db, 'Заказы');
@@ -107,9 +110,14 @@
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
+
   </script>
   
   <style scoped>
+  .custom-toast {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  }
   /* Стили для модального окна */
   .modal { 
     position: fixed; 

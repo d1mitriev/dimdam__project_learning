@@ -6,7 +6,7 @@
 			</div>
 			<div class="nav__navigation">
 				<a class="nav__navigation__item" href="/#listhouse" v-smooth-scroll>Оголошення</a>
-				<a class="nav__navigation__item" href="/#review">Відгуки</a>
+				<a class="nav__navigation__item" href="/#review">О нас</a>
 				<a class="nav__navigation__item" href="/#contacts">Контакти</a>
 			</div>
 			<div class="nav__buttons">
@@ -125,6 +125,7 @@
     	color: var(--white);
 		transition: all 0.3s;
 		text-decoration: none;
+		padding: 5px 10px;
 		border-radius: 5px;
     }
 

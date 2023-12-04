@@ -233,7 +233,6 @@
 /* Задний фон */
 
 .header__banner {
-	background-image: url(../assets/banner1.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: auto;
