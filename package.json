@@ -17,6 +17,7 @@
     "vue": "^3.3.8",
     "vue-router": "^4.2.5",
     "vue-scrollto": "^2.20.0",
+    "vue3-google-map": "^0.18.0",
     "vue3-smooth-scroll": "^0.8.1",
     "vue3-toastify": "^0.1.14",
     "vuesax": "^3.12.2"

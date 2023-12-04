@@ -8,12 +8,12 @@
 </template>
 
 <script>
-  import headerPage from './components/headerPage.vue';
-  import listhouse from './components/listhouse.vue';
-  import taxiorder from './components/ordertaxi.vue';
-  import infopanel from './components/infopanel.vue';
-  import contacts from './components/contacts.vue';
-  import review from './components/review.vue';
+  import headerPage from './components/landing/headerPage.vue';
+  import listhouse from './components/landing/listhouse.vue';
+  import taxiorder from './components/landing/ordertaxi.vue';
+  import infopanel from './components/landing/infopanel.vue';
+  import contacts from './components/landing/contacts.vue';
+  import review from './components/landing/review.vue';
   export default {
     components: {
       headerPage,

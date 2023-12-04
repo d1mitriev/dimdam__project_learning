@@ -6,7 +6,7 @@
 			</div>
 			<div class="nav__navigation">
 				<a class="nav__navigation__item" href="/#listhouse" v-smooth-scroll>Оголошення</a>
-				<a class="nav__navigation__item" href="/#review">О нас</a>
+				<a class="nav__navigation__item" href="/contact">О нас</a>
 				<a class="nav__navigation__item" href="/#contacts">Контакти</a>
 			</div>
 			<div class="nav__buttons">
@@ -62,7 +62,6 @@
 </template>
 
 <script>
-	import VueSmoothScroll from 'vue3-smooth-scroll';
 	import { inject, ref } from 'vue';
     export default {
         components: {

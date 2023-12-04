@@ -5,12 +5,12 @@
 </template>
 
 <script>
-  import navbarPage from './components/navbarPage.vue';
-  import footerpage from './components/footerpage.vue';
+  import navbarPage from './components/landing/navbarPage.vue'
+  import footerpage from './components/landing/footerpage.vue'
   export default {
     components: {
       navbarPage,
-      footerpage,
+      footerpage
     }
   }
 </script>

@@ -52,7 +52,7 @@
 	grid-template-columns: 60% 40%;
 }
 .taxi__img {
-	background-image: url(../assets/taxi--image.png);
+	background-image: url(src/assets/taxi--image.png);
 	width: 719px;
 	height: 384px;
 	margin-top: 70px;

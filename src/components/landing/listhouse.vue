@@ -211,7 +211,7 @@
 	align-items: normal;
 }
 .post--1__image {
-	background-image: url(../assets/post--image.png);
+	background-image: url(src/assets/post--image.png);
 	width: 435px;
 	height: 304px;
 	background-repeat: no-repeat;

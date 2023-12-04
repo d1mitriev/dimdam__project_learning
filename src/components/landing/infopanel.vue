@@ -212,7 +212,7 @@
 }
 
 .nfhws__author {
-	background-image: url(../assets/nfhws__author--img.png);
+	background-image: url(src/assets/nfhws__author--img.png);
 	width: 295px;
 	height: 300px;
 	
