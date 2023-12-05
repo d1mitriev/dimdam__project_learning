@@ -42,6 +42,7 @@
   <script>
   import {toast} from 'vue3-toastify';
   import 'vue3-toastify/dist/index.css';
+  import axios from 'axios';
   import { initializeApp } from 'firebase/app';
   import { getFirestore, collection, addDoc } from 'firebase/firestore/lite';
   import 'firebase/database';
@@ -52,7 +53,6 @@
       return {
       }
     },
-
     props: {
       modalData: Object,
       isModalVisible: Boolean
@@ -61,55 +61,36 @@
       closeModal() {
         this.$emit('close');
       },
-      submitModal() {
+      async submitModal() {
       this.$emit('submit');
-        
-      toast.success('Заказ успешно подтвержден', {position: toast.POSITION.TOP_CENTER, autoClose: 4000, className: 'custom-toast',});
+      try {
+        const response = await axios.post('http://localhost:8000/database.php', {
+          dateIn: this.formatDate(this.modalData.childInput1),
+          dateOut: this.formatDate(this.modalData.childInput2),
+          man: this.modalData.input1,
+          children: this.modalData.input2,
+          city: this.modalData.input3,
+          additionalServices: {
+            taxi: true,
+            food: true
+          }
+        });
 
-  try {
-    const ordersCollection = collection(db, 'Заказы');
-    addDoc(ordersCollection, {
-      dateIn: this.formatDate(this.modalData.childInput1),
-      dateOut: this.formatDate(this.modalData.childInput2),
-      man: this.modalData.input1,
-      children: this.modalData.input2,
-      city: this.modalData.input3,
-      additionalServices: {
-        taxi: true, // Доделать логику
-        food: true // Доделать логику
+        console.log('Данные успешно отправлены в базу данных MySQL:', response.data);
+        toast.success('Заказ успешно подтвержден', { position: toast.POSITION.TOP_CENTER, autoClose: 4000, className: 'custom-toast' });
+      } catch (error) {
+        console.error('Ошибка при отправке данных в базу данных MySQL:', error);
+        toast.error('Произошла ошибка при подтверждении заказа', { position: toast.POSITION.TOP_CENTER, autoClose: 4000, className: 'custom-toast' });
+      } finally {
+        this.isModalVisible = false;
       }
-    });
-
-    console.log('Данные успешно отправлены в базу данных Firestore!');
-  } catch (error) {
-    console.error('Ошибка при отправке данных в базу данных Firestore:', error);
-  } finally {
-    this.isModalVisible = false;
-  }
-},
-      formatDate(value) {
-      		const date = new Date(value);
-      		return format(date, 'dd.MM.yyyy');
-    	},
-      
     },
-  };
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyBCgLCf_64LVdEhHbUk7XYccg2VttRQBHw",
-    authDomain: "dimdam-c25df.firebaseapp.com",
-    databaseURL: "https://dimdam-c25df-default-rtdb.firebaseio.com",
-    projectId: "dimdam-c25df",
-    storageBucket: "dimdam-c25df.appspot.com",
-    messagingSenderId: "841110788079",
-    appId: "1:841110788079:web:3b2bc9aab2f5cab31ac81a",
-    measurementId: "G-Z3TXMH1RD7"
-  };
-
-  initializeApp(firebaseConfig);
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+    formatDate(value) {
+      const date = new Date(value);
+      return date.toLocaleDateString();
+    },
+  },
+}
 
   </script>
   
