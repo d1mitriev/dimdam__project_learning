@@ -1,6 +1,6 @@
 <template>
     <headerPage></headerPage>
-    <listhouse></listhouse>
+    <listinghouse></listinghouse>
     <taxiorder></taxiorder>
     <infopanel></infopanel>
     <contacts></contacts>
@@ -9,7 +9,7 @@
 
 <script>
   import headerPage from './components/landing/headerPage.vue';
-  import listhouse from './components/landing/listhouse.vue';
+  import listinghouse from './components/landing/listinghouse.vue';
   import taxiorder from './components/landing/ordertaxi.vue';
   import infopanel from './components/landing/infopanel.vue';
   import contacts from './components/landing/contacts.vue';
@@ -17,7 +17,7 @@
   export default {
     components: {
       headerPage,
-      listhouse,
+      listinghouse,
       taxiorder,
       infopanel,
       contacts,

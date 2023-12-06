@@ -59,8 +59,8 @@
 	border-radius: 25px;
 
 }
-.taxi__info {
-}
+/* .taxi__info {
+} */
 .taxi__title {
 	margin-top: 34px;  
 }
