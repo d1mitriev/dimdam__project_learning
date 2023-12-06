@@ -3,6 +3,11 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -25,11 +30,12 @@ if (isset($postData['dateIn']) && $postData['dateIn'] !== null) {
     $sql = "INSERT INTO `order` (dateIn, dateOut, man, children, city, taxi, food) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssssss", $postData['dateIn'], $postData['dateOut'], $postData['man'], $postData['children'], $postData['city'], $postData['additionalServices']['taxi'], $postData['additionalServices']['food']);
-    
+
     // Попробуйте выполнить запрос
     try {
         $stmt->execute();
-        echo json_encode(['success' => true]);
+        $orderId = $stmt->insert_id; // Получаем ID последней вставленной записи
+        echo json_encode(['success' => true, 'orderId' => $orderId]);
     } catch (mysqli_sql_exception $e) {
         echo json_encode(['error' => $e->getMessage()]);
     }

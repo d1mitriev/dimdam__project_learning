@@ -40,58 +40,84 @@
   </template>
   
   <script>
-  import {toast} from 'vue3-toastify';
+  import { toast } from 'vue3-toastify';
   import 'vue3-toastify/dist/index.css';
   import axios from 'axios';
-  import { initializeApp } from 'firebase/app';
-  import { getFirestore, collection, addDoc } from 'firebase/firestore/lite';
-  import 'firebase/database';
-  import { format } from 'date-fns';
-  import { ref } from 'vue';
+  
   export default {
     data() {
       return {
-      }
+        isModalVisible: false,
+      };
     },
     props: {
       modalData: Object,
-      isModalVisible: Boolean
+      isModalVisible: Boolean,
     },
     methods: {
       closeModal() {
-        this.$emit('close');
+        this.isModalVisible = false;
       },
       async submitModal() {
-      this.$emit('submit');
-      try {
-        const response = await axios.post('http://localhost:8000/database.php', {
-          dateIn: this.formatDate(this.modalData.childInput1),
-          dateOut: this.formatDate(this.modalData.childInput2),
-          man: this.modalData.input1,
-          children: this.modalData.input2,
-          city: this.modalData.input3,
-          additionalServices: {
-            taxi: true,
-            food: true
+        this.$emit('submit');
+        let orderId;
+        try {
+          const response = await axios.post('http://localhost:8000/database.php', {
+            dateIn: this.formatDate(this.modalData.childInput1),
+            dateOut: this.formatDate(this.modalData.childInput2),
+            man: this.modalData.input1,
+            children: this.modalData.input2,
+            city: this.modalData.input3,
+            additionalServices: {
+              taxi: true,
+              food: true,
+            },
+          });
+          
+          orderId = response.data.orderId;
+          if (orderId) {
+            await this.sendEmail(orderId);
           }
+
+          console.log('Данные успешно отправлены в базу данных MySQL:', response.data);
+          toast.success('Заказ успешно подтвержден', { position: toast.POSITION.TOP_CENTER, autoClose: 4000, className: 'custom-toast' });
+  
+        } catch (error) {
+          console.error('Ошибка при отправке данных в базу данных MySQL:', error);
+          toast.error('Произошла ошибка при подтверждении заказа', { position: toast.POSITION.TOP_CENTER, autoClose: 4000, className: 'custom-toast' });
+        } finally {
+          this.isModalVisible = false;
+        }
+      },
+      async sendEmail(orderId) {
+    try {
+        // Отправка запроса для отправки письма на email
+        const emailResponse = await axios.post('http://localhost:8000/mailer.php', {
+            orderId: orderId,
+            dateIn: this.formatDate(this.modalData.childInput1),
+            dateOut: this.formatDate(this.modalData.childInput2),
+            man: this.modalData.input1,
+            children: this.modalData.input2,
+            city: this.modalData.input3,
+            additionalServices: {
+              taxi: true,
+              food: true,
+
+            },
         });
 
-        console.log('Данные успешно отправлены в базу данных MySQL:', response.data);
-        toast.success('Заказ успешно подтвержден', { position: toast.POSITION.TOP_CENTER, autoClose: 4000, className: 'custom-toast' });
-      } catch (error) {
-        console.error('Ошибка при отправке данных в базу данных MySQL:', error);
-        toast.error('Произошла ошибка при подтверждении заказа', { position: toast.POSITION.TOP_CENTER, autoClose: 4000, className: 'custom-toast' });
-      } finally {
-        this.isModalVisible = false;
-      }
-    },
-    formatDate(value) {
-      const date = new Date(value);
-      return date.toLocaleDateString();
-    },
-  },
-}
+        console.log('Письмо успешно отправлено:', emailResponse.data);
+    } catch (error) {
+        console.error('Ошибка при отправке письма:', error);
+    }
+},
 
+      formatDate(value) {
+        const date = new Date(value);
+        return date.toLocaleDateString();
+      },
+    },
+  };
   </script>
   
   <style scoped>

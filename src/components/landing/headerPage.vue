@@ -220,7 +220,7 @@
 <style scoped>
 
 * {
-	/* user-select: none; */
+	user-select: none;
 }
     
 /* Работа с header */
