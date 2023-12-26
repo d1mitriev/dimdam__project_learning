@@ -1,0 +1,19 @@
+<div class="posts-block">
+	<h3>Demo Posts</h3>
+	<div class="posts-scrollable">
+		<div v-for="p in posts" class="post-summary">
+			<span class="title">
+				<a v-bind:href="p.link" v-html="p.title.rendered"></a>
+			</span>
+			<template v-if="!p.excerpt.protected">
+			<div class="excerpt" v-html="p.excerpt.rendered"></div>
+			</template>
+		</div>
+	</div>
+	<div class="posts-control">
+		<!-- Even with infinite scroll, a 'load more' just in case. -->
+		<button type="button" @click="loadMore">More&hellip;</button>
+	</div>
+</div>
+
+<!-- vim: set ts=2 noexpandtab syntax=html: -->

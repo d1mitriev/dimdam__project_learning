@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+    <style>
+      /* Импорт шрифтов */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ЭТО БАЗА! */
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+::selection {
+  background-color: rgb(255, 188, 87); /* Цвет фона выделенного текста */
+  color: #fff; /* Цвет текста выделенной области */
+}
+
+/* Убираем своеобразные стили браузеров */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+ * {
+  scroll-behavior: smooth;
+ }
+
+/* Параметры */
+  :root {
+    --gray: #D9D9D9;
+    --white: #FFFFFF;
+    --orange: #FFBC57;
+    --dark: #6D6D6D;
+    --black: #000
+  }
+
+/* Настройка скроллбар */
+::-webkit-scrollbar {
+  width: 5px; 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  transition: 4s;
+  background: var(--orange); 
+}
+::-webkit-scrollbar-track {
+  background: var(--white); 
+}
+::-webkit-scrollbar-button {
+  display: none; 
+}
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

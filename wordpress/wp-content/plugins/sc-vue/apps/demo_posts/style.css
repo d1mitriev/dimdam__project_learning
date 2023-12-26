@@ -1,0 +1,20 @@
+div.pl2010_vue div.posts-block h3 {
+	margin-top: 1rem;
+	margin-bottom: 0px;
+}
+
+div.pl2010_vue div.posts-scrollable {
+	width: 100%;
+	height: 300px;
+	overflow: auto;
+
+	border: 1px solid black;
+}
+
+div.pl2010_vue div.posts-control button {
+	font-size: 1.2rem;
+	text-transform: none;
+	border-radius: 3px;
+}
+
+/* vim: set ts=2 noexpandtab: */
