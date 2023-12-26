@@ -1,0 +1,244 @@
+<template>
+    <div class="container">
+        <div class="listhouse">
+            <div class="listhouse__post" v-for="(item, index) in post" :key="index">
+                <div class="post__image" :style="{ background: 'url(' + item.img + ') center center no-repeat', backgroundSize: 'cover' }"></div>
+                <div class="listhouse__post__grid-conteiner">
+                    <div class="post__info">
+                        <div class="post__price"> {{ item.price }}</div>
+                        <div class="post__street"> {{ item.street }} </div>
+                        <div class="post__adress"> {{ item.region }}
+                            <a>
+                            <svg width="3" height="3" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="1.5" cy="1.5" r="1.5" fill="black"/>
+                                </svg>
+                            </a>
+                                {{ item.city }}</div>
+                        <div class="post__description">
+                            {{ item.room }} 
+                            <a><svg width="3" height="3" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="1.5" cy="1.5" r="1.5" fill="black"/>
+                                </svg>
+                            </a>							
+                            {{ item.floor }} 
+                        <a>
+                             <svg width="3" height="3" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="1.5" cy="1.5" r="1.5" fill="black"/>
+                                </svg>
+                        </a>
+                            {{ item.area }}</div>
+                        <div class="post__tag">
+                            <div class="tag__1"><a>{{ item.tag1 }}</a></div>
+                            <div class="tag__1"><a>{{ item.tag2 }}</a></div>
+                            <div class="tag__1"><a>{{ item.tag3 }}</a></div>
+                        </div>
+                    </div>
+                    <div class="post__like">
+                        <svg width="29" height="24" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.58898 0C8.9027 0.0192013 10.1878 0.363805 11.3144 0.999011C12.4411 1.63422 13.3694 2.53753 14.0056 3.61773C14.6419 2.53753 15.5702 1.63422 16.6969 0.999011C17.8235 0.363805 19.1086 0.0192013 20.4223 0C22.5165 0.0854999 24.4897 0.946371 25.9106 2.39454C27.3315 3.8427 28.0847 5.76045 28.0056 7.72879C28.0056 12.7136 22.422 18.1577 17.739 21.8489C16.6934 22.6746 15.3714 23.1272 14.0056 23.1272C12.6399 23.1272 11.3179 22.6746 10.2723 21.8489C5.58931 18.1577 0.00564194 12.7136 0.00564194 7.72879C-0.0734005 5.76045 0.679811 3.8427 2.10072 2.39454C3.52163 0.946371 5.49474 0.0854999 7.58898 0ZM11.7715 20.1716C12.3968 20.6664 13.1881 20.9378 14.0056 20.9378C14.8232 20.9378 15.6145 20.6664 16.2398 20.1716C22.2341 15.4455 25.6723 10.9113 25.6723 7.72879C25.7521 6.34168 25.2449 4.98121 24.2614 3.9441C23.2779 2.90698 21.8979 2.27736 20.4223 2.19257C18.9467 2.27736 17.5667 2.90698 16.5832 3.9441C15.5997 4.98121 15.0926 6.34168 15.1723 7.72879C15.1723 8.01955 15.0494 8.29839 14.8306 8.50398C14.6118 8.70958 14.3151 8.82508 14.0056 8.82508C13.6962 8.82508 13.3995 8.70958 13.1807 8.50398C12.9619 8.29839 12.839 8.01955 12.839 7.72879C12.9187 6.34168 12.4115 4.98121 11.4281 3.9441C10.4446 2.90698 9.06454 2.27736 7.58898 2.19257C6.11341 2.27736 4.7334 2.90698 3.7499 3.9441C2.7664 4.98121 2.25922 6.34168 2.33898 7.72879C2.33898 10.9113 5.77714 15.4455 11.7715 20.1672V20.1716Z" fill="black"/>
+                            </svg>						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                post: [
+                    {
+                        img: 'src/assets/post--image.png',
+                        price: '67 950 грн',
+                        street: 'вул. Панфіловців',
+                        region: 'Печерськ',
+                        city: 'Киів',
+                        room: '2 кімнати',
+                        floor: '2 поверха ',
+                        area: '130 м2',
+                        tag1: 'Новий ремонт',
+                        tag2: 'Євроремонт',
+                        tag3: 'Поруч зі школою'
+                    },
+                    {
+                        img: 'src/assets/post--image.png',
+                        price: '67 950 грн',
+                        street: 'вул. Панфіловців',
+                        region: 'Печерськ',
+                        city: 'Киів',
+                        room: '2 кімнати',
+                        floor: '2 поверха ',
+                        area: '130 м2',
+                        tag1: 'Новий ремонт',
+                        tag2: 'Євроремонт',
+                        tag3: 'Поруч зі школою'
+                    },
+                    {
+                        img: 'src/assets/post--image.png',
+                        price: '67 950 грн',
+                        street: 'вул. Панфіловців',
+                        region: 'Печерськ',
+                        city: 'Киів',
+                        room: '2 кімнати',
+                        floor: '2 поверха ',
+                        area: '130 м2',
+                        tag1: 'Новий ремонт',
+                        tag2: 'Євроремонт',
+                        tag3: 'Поруч зі школою'
+                    },
+                    {
+                        img: 'src/assets/post--image.png',
+                        price: '67 950 грн',
+                        street: 'вул. Панфіловців',
+                        region: 'Печерськ',
+                        city: 'Киів',
+                        room: '2 кімнати',
+                        floor: '2 поверха ',
+                        area: '130 м2',
+                        tag1: 'Новий ремонт',
+                        tag2: 'Євроремонт',
+                        tag3: 'Поруч зі школою'
+                    },
+
+                ]
+            }
+        }
+        
+    }
+</script>
+    
+<style scoped>
+
+    .container {
+        margin-top: 50px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .listhouse {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        order: 3;
+        flex-wrap: wrap;
+        width: 1445px;
+    }
+
+    .listhouse__post {
+	width: 435px;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	border-radius: 25px;
+	overflow: hidden;
+}
+
+.listhouse__post:hover {
+	transition: 0.3s;
+	box-shadow: 0px 0px 5px 0px var(--dark);
+}
+
+.listhouse__post:hover .post__image{
+	transform: scale(1.05);
+	width: 435px;
+	height: 304px;
+}
+
+.listhouse__post__grid-conteiner {
+	margin-top: 16px;
+	display: grid;
+	grid-template-columns: 90% 10%;
+}
+.post__info {
+	align-items: normal;
+}
+.post__image {
+	background-image: url(src/assets/post--image.png);
+	width: 435px;
+	height: 304px;
+	background-repeat: no-repeat;
+	border-radius: 25px 25px 0px 0px;
+	transition: all 0.3s;
+}
+.post__price {
+	font-weight: 600;
+	font-size: 32px;
+}
+.post__street {
+	margin-top: 6px;
+	font-weight: 600;
+	font-size: 24px;
+}
+.post__adress {
+	display: flex;
+	margin-top: 6px;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.post__adress a {
+	display: flex;
+	align-items: center;
+	margin-top: 6px;
+	padding: 6px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-weight: 400;
+	font-size: 16px;
+}
+.post__description {
+	display: flex;
+	align-items: center;
+	margin-top: 6px;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.post__description a {
+	display: flex;
+	align-items: center;
+	margin-top: 6px;
+	padding: 6px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.post__tag {
+	font-weight: 400;
+	font-size: 16px;
+	display: flex;
+	flex-direction: row;
+	width: 435px;
+	margin-top: 26px;
+	gap: 10px;
+}
+
+/* Работа с тегом */
+
+.tag__1 {
+	display: flex;
+	font-size: 16px;
+}
+
+.tag__1 a {
+	border: 1px solid var(--orange);
+	border-radius: 15px;
+	padding: 5px 10px;
+	font-size: 12px;
+	align-items: center;
+	display: flex;
+	
+}
+
+.post__like {
+	display: flex;
+}
+</style>
